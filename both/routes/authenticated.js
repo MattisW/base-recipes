@@ -1,6 +1,6 @@
 const authenticatedRedirect = () => {
   if ( !Meteor.loggingIn() && !Meteor.userId() ) {
-    FlowRouter.go( 'login' );
+    FlowRouter.go( 'home' );
   }
 };
 
@@ -10,9 +10,9 @@ const authenticatedRoutes = FlowRouter.group({
 });
 
 authenticatedRoutes.route( '/', {
-  name: 'index',
+  name: 'main',
   action() {
-    BlazeLayout.render( 'default', { yield: 'index' } );
+    BlazeLayout.render( 'MainLayout', { yield: 'Recipes' } );
   }
 });
 
