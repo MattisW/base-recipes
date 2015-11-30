@@ -4,6 +4,10 @@
         <p>
             {{desc}}
         </p>
+        <!-- loop over each Zutat -->
+        {{#each zutaten}}
+        <span>{{name}} -- {{menge}}</span>
+        {{/each}}
     </article>
 
 </template>

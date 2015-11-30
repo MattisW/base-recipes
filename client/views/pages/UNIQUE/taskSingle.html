@@ -1,0 +1,14 @@
+<template name="taskSingle">
+    <tr class="{{#if checked}}success{{/if}}{{#if editing}}primary{{/if}}">
+        <td>
+            <input type="checkbox" class="i-checks taskCheck" checked="{{checked}}" name="input[]">
+        </td>
+        <td><span class="taskDesc">{{desc}}</span></td>
+        <td>{{createdAt}}</td>
+        <td>{{owner}}</td>
+        <td>
+            <span class="label label-warning">Öffentlich</span>
+        </td>
+        <td><button class="btn btn-xs btn-danger delete">X</button></td>
+    </tr>
+</template>

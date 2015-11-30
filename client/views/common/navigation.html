@@ -1,0 +1,63 @@
+<template name="navigation">
+    <nav class="navbar-default navbar-static-side" role="navigation">
+        <div class="sidebar-collapse">
+
+            <!-- Close canvas menu used only on OffCanvas page -->
+            <!-- You can remove this tag if you dont use offCanvas menu -->
+            <a class="close-canvas-menu"><i class="fa fa-times"></i></a>
+            <!-- End offCanvas menu toggle -->
+
+            <ul class="nav" id="side-menu">
+                <li class="nav-header">
+                    <div class="dropdown profile-element">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <span class="clear">
+                                <span class="block m-t-xs">
+                                    <strong class="font-bold">Mattis</strong>
+                                </span>
+                                <span class="text-muted text-xs block">Administrator <b class="caret"></b></span>
+                            </span>
+                        </a>
+                        <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                            <li><a href="#">Profil</a></li>
+                            <li><a href="#">Reports</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Kontakt</a></li>
+                        </ul>
+                    </div>
+                    <div class="logo-element">
+                        IN+
+                    </div>
+                </li>
+                <li class="{{isActiveRoute regex='pageOne'}}">
+                    <a href="{{pathFor route='pageOne'}}"><i class="fa fa-dashboard"></i> <span class="nav-label">Page one</span> </a>
+                </li>
+                <li class="{{isActiveRoute regex='pageTwo'}}">
+                    <a href="{{pathFor route='pageTwo'}}"><i class="fa fa-diamond"></i> <span class="nav-label">Page two</span> </a>
+                </li>
+                <li class="{{isActiveRoute regex='pageTables'}}">
+                    <a href="{{pathFor route='pageTables'}}"><i class="fa fa-mail"></i> <span class="nav-lavel">TABLES</span> </a>
+                </li>
+                <li class="{{isActiveRoute regex='formBasic|formAdvanced|formWizard|formUpload|textEditor'}}">
+                    <a href="#"><i class="fa fa-edit"></i> <span class="nav-label">Forms</span><span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse {{isActiveRoute regex='formBasic|formAdvanced|formWizard|formUpload|textEditor' className='in'}}">
+                        <li class="{{isActiveRoute regex='formBasic'}}"><a href="{{pathFor route='formBasic'}}">Basic form</a></li>
+                        <li class="{{isActiveRoute regex='formAdvanced'}}"><a href="{{pathFor route='formAdvanced'}}">Advanced Plugins</a></li>
+                        <li class="{{isActiveRoute regex='formWizard'}}"><a href="{{pathFor route='formWizard'}}">Wizard</a></li>
+                        <li class="{{isActiveRoute regex='formUpload'}}"><a href="{{pathFor route='formUpload'}}">File Upload</a></li>
+                        <li class="{{isActiveRoute regex='textEditor'}}"><a href="{{pathFor route='textEditor'}}">Text Editor</a></li>
+                    </ul>
+                </li>
+                <li class="{{isActiveRoute regex='tableStatic|dataTables|fooTables'}}">
+                    <a href="#"><i class="fa fa-table"></i> <span class="nav-label">Tables</span><span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse {{isActiveRoute regex='tableStatic|dataTables|fooTables' className='in'}}">
+                        <li class="{{isActiveRoute regex='tableStatic'}}"><a href="{{pathFor route='tableStatic'}}">Static Tables</a></li>
+                        <li class="{{isActiveRoute regex='fooTables'}}"><a href="{{pathFor route='fooTables'}}">Foo tables</a></li>
+                        <li class="{{isActiveRoute regex='dataTables'}}"><a href="{{pathFor route='dataTables'}}">Data Tables</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+</template>

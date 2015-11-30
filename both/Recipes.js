@@ -12,6 +12,15 @@ RecipesCol.allow({
     }
 });
 
+Zutat = new SimpleSchema({
+    name: {
+        type: String
+    },
+    menge: {
+        type: String
+    }
+});
+
 RecipeSchema = new SimpleSchema({
     name: {
         type: String,
@@ -20,6 +29,17 @@ RecipeSchema = new SimpleSchema({
     desc: {
         type: String,
         label: 'Description'
+    },
+    zutaten: {
+        type: [Zutat]
+    },
+    aufDerKarte: {
+        type: Boolean,
+        defaultValue: false,
+        optional: true,
+        autoform: {
+            type: "hidden"
+        }
     },
     author: {
         type: String,
