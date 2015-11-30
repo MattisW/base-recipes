@@ -12,6 +12,10 @@ const publicRoutes = FlowRouter.group({
 publicRoutes.route( '/home', {
   name: 'home',
   action() {
+    // If User logged in, redirect to recipe-book
+   if(Meteor.userId()) {
+       FlowRouter.go('main');
+   }
     BlazeLayout.render( 'HomeLayout' );
   }
 });

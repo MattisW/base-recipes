@@ -22,3 +22,17 @@ authenticatedRoutes.route( '/dashboard', {
     BlazeLayout.render( 'default', { yield: 'dashboard' } );
   }
 });
+
+FlowRouter.route('/menu', {
+    name: 'menu',
+    action() {
+        BlazeLayout.render('MainLayout', {yield: 'Menu'});
+    }
+});
+
+FlowRouter.route('/recipe/:id', {
+    name: 'recipe-single',
+    action() {
+        BlazeLayout.render('MainLayout', {yield: 'RecipeSingle'});
+    }
+});

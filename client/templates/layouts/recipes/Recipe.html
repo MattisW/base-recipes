@@ -1,13 +1,24 @@
 <template name="Recipe">
-    <article class="recipe">
-        <h3>{{name}}</h3>
-        <p>
-            {{desc}}
-        </p>
-        <!-- loop over each Zutat -->
-        {{#each zutaten}}
-        <span>{{name}} -- {{menge}}</span>
-        {{/each}}
-    </article>
+  <article class="recipe">
+    <h3>{{name}}</h3>
+    <p>
+      {{desc}}
+    </p>
+    <!-- loop over each Zutat -->
+    {{#each zutaten}}
+    <span>{{name}} -- {{menge}}</span>
+    {{/each}}
+    <a href="/recipe/{{_id}}">View Details</a>
+    {{#if aufDerKarte}}
+    <div class="row">
+      <button class="btn btn-error toggle-menu">Remove From Menu</button>
+    </div>
 
+      {{else}}
+      <div class="row">
+      <button class="btn btn-primary toggle-menu">Add to Menu</button>
+    </div>
+    {{/if}}
+  </article>
+  <hr>
 </template>

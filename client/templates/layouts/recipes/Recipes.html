@@ -1,8 +1,6 @@
 <template name="Recipes">
-    {{> NewRecipe}}
-    <section class="recipes">
-        {{#each recipes}}
-            {{> Recipe}}
-        {{/each}}
-    </section>
+  {{> NewRecipe}}
+  <div class="col-sm-push-2 col-sm-offset-3">
+      {{#if Template.subscriptionsReady}} {{#each recipes}} {{> Recipe}} {{/each}} {{else}} {{> spinner}} {{/if}}
+  </div>
 </template>
